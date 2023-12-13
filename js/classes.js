@@ -158,7 +158,7 @@ class Fighter extends Sprite {
   }
 
   move(x) {
-    if (!this.isDead) this.velocity.x = x * this.orientation;
+    if (!this.isDead || !x) this.velocity.x = x * this.orientation;
   }
 
   jump(y) {
