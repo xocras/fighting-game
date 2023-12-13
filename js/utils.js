@@ -153,8 +153,19 @@ function animatePlayer(PLAYER) {
   PLAYER.changeSprite(PLAYER.isDead ? "Death" : "Idle");
 }
 
+function canvasFilter() {
+  CONTEXT.fillStyle = "rgba(255, 255, 255, 0.1)";
+  CONTEXT.fillRect(0, 0, CANVAS_W, CANVAS_H);
+}
+
 function updateEntities() {
-  ENTITIES.forEach((c) => c.update());
+  BACKGROUND.update();
+  SHOP.update();
+
+  canvasFilter();
+
+  PLAYER_1.update();
+  PLAYER_2.update();
 }
 
 function updateGame() {

@@ -17,9 +17,9 @@ const ATTACK_DAMAGE = BASE_HEALTH / 25;
 
 const GRAVITY = 0.425;
 
-const WALKING_SPEED = 4;
+const WALKING_SPEED = 6;
 
-const RUNNING_SPEED = 5;
+const RUNNING_SPEED = 8;
 
 const DEFAULT_TIME = 120;
 

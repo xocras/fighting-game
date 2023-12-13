@@ -1,5 +1,3 @@
-// ============================================================
-
 const BACKGROUND = new Sprite({
   area: { position: { x: 0, y: 0 } },
   src: "img/Background.png",
@@ -47,10 +45,5 @@ const PLAYER_2 = new Fighter({
   frames: { max: 8, attack: 1 },
   sprites: P2_SPRITES,
 });
-// ============================================================
-
-const ENTITIES = [BACKGROUND, SHOP, PLAYER_1, PLAYER_2];
-
-// ============================================================
 
 startGame();
