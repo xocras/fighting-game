@@ -89,13 +89,9 @@ function collisionCheck(A, B) {
 
     A.isAttacking = false;
 
-    A.isRecovering = true;
+    A.recover();
 
-    B.isRecovering = true;
-
-    setTimeout(() => {
-      A.isRecovering = false;
-    }, RECOVERY_SPEED);
+    B.recover();
 
     B.health -= ATTACK_DAMAGE * A.multiplier;
 

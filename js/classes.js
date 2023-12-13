@@ -124,8 +124,6 @@ class Fighter extends Sprite {
 
     if (this.currentAnimation("Take Hit")) return;
 
-    if (this.finalFrame("Take Hit")) this.isRecovering = false;
-
     if (this.currentAnimation("Attack")) return;
 
     if (this.finalFrame("Attack")) this.isAttacking = false;
@@ -145,6 +143,14 @@ class Fighter extends Sprite {
 
   isJumping() {
     return this.area.position.y + this.velocity.y < FLOOR_H - PLAYER_H;
+  }
+
+  recover() {
+    this.isRecovering = true;
+
+    setTimeout(() => {
+      this.isRecovering = false;
+    }, RECOVERY_SPEED);
   }
 
   attack() {
