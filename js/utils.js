@@ -132,13 +132,21 @@ function endGame(PLAYER) {
 function animatePlayer(PLAYER) {
   PLAYER.move(0);
 
-  if (PLAYER.CONTROLS.FORWARD.pressed && PLAYER.lastKey === "FORWARD") {
+  if (
+    PLAYER.CONTROLS.FORWARD.pressed &&
+    PLAYER.lastKey === "FORWARD" &&
+    !PLAYER.isDead
+  ) {
     PLAYER.move(RUNNING_SPEED);
     PLAYER.changeSprite("Run");
     return;
   }
 
-  if (PLAYER.CONTROLS.BACKWARD.pressed && PLAYER.lastKey === "BACKWARD") {
+  if (
+    PLAYER.CONTROLS.BACKWARD.pressed &&
+    PLAYER.lastKey === "BACKWARD" &&
+    !PLAYER.isDead
+  ) {
     PLAYER.move(-WALKING_SPEED);
   }
 
