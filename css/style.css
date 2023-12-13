@@ -1,0 +1,81 @@
+body {
+  background-color: black;
+  margin: 0;
+}
+
+main {
+  background-color: black;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  border: double white 10px;
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  width: 1024px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.center {
+  position: absolute;
+  width: 1024px;
+  height: 576px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.time {
+  background-color: #1b1a2e;
+
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-value,
+.message {
+  color: white;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+.hp-container {
+  background-color: #31304d;
+  border: 1px solid white;
+  width: 400px;
+  height: 30px;
+  display: flex;
+}
+
+.hp-container.p1 {
+  justify-content: flex-end;
+}
+
+.hp-container.p2 {
+  justify-content: flex-start;
+}
+
+.hp-bar {
+  background-color: #f9fab0;
+  width: 400px;
+  height: 30px;
+}
