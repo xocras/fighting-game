@@ -141,10 +141,6 @@ class Fighter extends Sprite {
     this.frames.max = this.sprites[sprite].frames;
 
     this.image = this.sprites[sprite].image;
-
-    this.isRecovering = false;
-
-    this.isAttacking = false;
   }
 
   isJumping() {

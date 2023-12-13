@@ -76,6 +76,8 @@ function collisionCheck(A, B) {
 
   if (GAMEOVER) return;
 
+  console.log(A.index, A.frames.attack);
+
   if (
     A.hitbox.position.x <= B.area.position.x + B.width &&
     A.hitbox.position.x + A.hitbox.width >= B.area.position.x &&
@@ -83,6 +85,8 @@ function collisionCheck(A, B) {
     A.hitbox.position.y + A.hitbox.height >= B.area.position.y &&
     A.index === A.frames.attack
   ) {
+    console.log(A.index, A.frames.attack);
+
     A.isAttacking = false;
 
     A.isRecovering = true;
@@ -106,22 +110,26 @@ function collisionCheck(A, B) {
 function endGame(PLAYER) {
   const message = document.querySelector(".message");
 
-  if (PLAYER_1.health === PLAYER_2.health) {
+  const P1 = (100 * PLAYER_1.health) / (BASE_HEALTH * PLAYER_1.multiplier);
+  const P2 = (100 * PLAYER_2.health) / (BASE_HEALTH * PLAYER_2.multiplier);
+
+  if (P1 === P2) {
     message.innerText = `It's a tie!`;
     message.style.display = "block";
   }
 
-  if (PLAYER_1.health > PLAYER_2.health) {
+  if (P1 > P2) {
     message.innerText = `${PLAYER_1.name} wins!`;
     message.style.display = "block";
   }
 
-  if (PLAYER_2.health > PLAYER_1.health) {
+  if (P2 > P1) {
     message.innerText = `${PLAYER_2.name} wins!`;
     message.style.display = "block";
   }
 
-  PLAYER.isDead = true;
+  if (PLAYER) PLAYER.isDead = true;
+
   GAMEOVER = true;
 }
 
