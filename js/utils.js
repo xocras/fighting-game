@@ -76,8 +76,6 @@ function collisionCheck(A, B) {
 
   if (GAMEOVER) return;
 
-  console.log(A.index, A.frames.attack);
-
   if (
     A.hitbox.position.x <= B.area.position.x + B.width &&
     A.hitbox.position.x + A.hitbox.width >= B.area.position.x &&
@@ -85,8 +83,6 @@ function collisionCheck(A, B) {
     A.hitbox.position.y + A.hitbox.height >= B.area.position.y &&
     A.index === A.frames.attack
   ) {
-    console.log(A.index, A.frames.attack);
-
     A.isAttacking = false;
 
     A.recover();
